@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Notion | One workspace. Every team.</title>
+<meta name="description" content="Notion, the connected workspace where better, faster work happens." />
+<meta property="og:title" content="Notion | One workspace. Every team." />
+<meta property="og:description" content="Notion, the connected workspace where better, faster work happens." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="/saas/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="/saas/styles.css" />
+<link rel="stylesheet" href="/saas/polish.css" />
+<script>
+  // Prevent theme flash — mirrors the app's inline theme init.
+  (function(){
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+    } catch(e) {}
+  })();
+</script>
+</head>
+<body>
+
+
+  <a class="skip-link" href="#main-content" data-en="Skip to content" data-kh="រំលងទៅមាតិកា">Skip to content</a>
+
+  <!-- ═══════════════════════════════════════════
+       NAV — Sticky frosted glass
+  ════════════════════════════════════════════ -->
+  <input type="checkbox" id="nav-toggle" class="sr-only" />
+  <header class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo" aria-label="Notion home">
+          <span class="nav__logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L11.31 19s0 .84-1.167.84l-3.222.186c-.093-.187 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span>
+          Notion
+        </a>
+
+        <nav class="nav__links" aria-label="Primary navigation">
+          <a href="#features" class="nav__link" data-en="Product" data-kh="ផលិតផល">Product</a>
+          <a href="#solutions" class="nav__link" data-en="Solutions" data-kh="ដំណោះស្រាយ">Solutions</a>
+          <a href="#pricing" class="nav__link" data-en="Pricing" data-kh="តម្លៃ">Pricing</a>
+          <a href="#download" class="nav__link" data-en="Download" data-kh="ទាញយក">Download</a>
+          <a href="contact.html" class="nav__link" data-en="Enterprise" data-kh="សហគ្រាស">Enterprise</a>
+        </nav>
+
+        <div class="nav__actions">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+          <button class="lang-toggle" type="button" aria-label="Switch language"></button>
+          <a href="login.html" class="nav__link" style="font-size: var(--fs-body-sm);" data-en="Log in" data-kh="ចូល">Log in</a>
+          <a href="signup.html" class="btn-primary" style="padding: 7px 16px; font-size: var(--fs-body-sm);" data-en="Get Notion free" data-kh="ប្រើ Notion ដោយឥតគិតថ្លៃ">Get Notion free</a>
+          <label for="nav-toggle" class="nav__hamburger-label" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+      </div>
+
+      <nav class="nav__mobile-menu" aria-label="Mobile navigation">
+        <a href="#features" class="nav__link" data-en="Product" data-kh="ផលិតផល">Product</a>
+        <a href="#solutions" class="nav__link" data-en="Solutions" data-kh="ដំណោះស្រាយ">Solutions</a>
+        <a href="#pricing" class="nav__link" data-en="Pricing" data-kh="តម្លៃ">Pricing</a>
+        <a href="#download" class="nav__link" data-en="Download" data-kh="ទាញយក">Download</a>
+        <a href="contact.html" class="nav__link" data-en="Enterprise" data-kh="សហគ្រាស">Enterprise</a>
+        <a href="login.html" class="nav__link" data-en="Log in" data-kh="ចូល">Log in</a>
+        <a href="signup.html" class="btn-primary" style="width: 100%; justify-content: center; margin-top: 8px;" data-en="Get Notion free" data-kh="ប្រើ Notion ដោយឥតគិតថ្លៃ">Get Notion free</a>
+        <div class="nav__mobile-toggles">
+          <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+          <button class="lang-toggle" type="button" aria-label="Switch language"></button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" tabindex="-1">
+
+    <!-- ═══════════════════════════════════════════
+         HERO — Full viewport with mockup card
+    ════════════════════════════════════════════ -->
+    <section class="hero-band" aria-labelledby="hero-headline">
+      <div class="hero-stars" aria-hidden="true">
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+        <span class="hero-star"></span>
+      </div>
+
+      <div class="container">
+        <div class="hero-band__inner">
+          <div class="hero-band__copy">
+            <div class="badge badge--primary hero-band__eyebrow" data-en="New! Notion AI is here" data-kh="ថ្មី! Notion AI មកដល់ហើយ">New. Notion AI is here</div>
+
+            <h1 id="hero-headline" class="text-display1 hero-band__headline" style="margin-top: 20px; margin-bottom: 0;">
+              <span data-en="Meet the workspace" data-kh="ស្គាល់កន្លែងធ្វើការ">Meet the workspace</span><br />
+              <span class="hero-band__headline--gradient" data-en="that thinks with you." data-kh="ដែលគិតជាមួយអ្នក">that thinks with you.</span>
+            </h1>
+
+            <p class="hero-band__sub" data-en="Write, plan, and collaborate in one tool, with an AI assistant that understands your context, drafts your docs, and keeps your team in sync." data-kh="សរសេរ រៀបចំផែនការ និងសហការគ្នាក្នុងឧបករណ៍តែមួយ ជាមួយជំនួយការ AI ដែលយល់ពីបរិបទរបស់អ្នក តាក់តែងឯកសារ និងធ្វើឲ្យក្រុមរបស់អ្នក​ ដំណើរការសុីសង្វាក់គ្នា">
+              Write, plan, and collaborate in one tool, with an AI assistant that understands your context, drafts your docs, and keeps your team in sync.
+            </p>
+
+            <div class="hero-band__ctas">
+              <a href="signup.html" class="btn-primary" style="padding: 13px 28px; font-size: var(--fs-button);" data-en="Get Notion free" data-kh="ប្រើ Notion ដោយឥតគិតថ្លៃ">
+                Get Notion free
+              </a>
+              <a href="#features" class="btn-ghost" style="padding: 13px 24px; font-size: var(--fs-button);" data-en="See how it works" data-kh="មើលរបៀបដំណើរការ">
+                See how it works
+              </a>
+            </div>
+          </div>
+
+          <!-- Floating product mockup card -->
+          <div class="hero-mockup">
+            <div class="hero-mockup__card">
+              <div class="hero-mockup__titlebar">
+                <span class="hero-mockup__traffic">
+                  <i class="hero-mockup__tl hero-mockup__tl--red"></i>
+                  <i class="hero-mockup__tl hero-mockup__tl--amber"></i>
+                  <i class="hero-mockup__tl hero-mockup__tl--green"></i>
+                </span>
+                <span class="hero-mockup__winlabel">Q3 ROADMAP: ENGINEERING</span>
+                <span class="hero-mockup__traffic hero-mockup__traffic--spacer" aria-hidden="true"></span>
+              </div>
+
+              <div class="hero-mockup__table" role="table" aria-label="Q3 Roadmap">
+                <div class="hero-mockup__th">NAME</div>
+                <div class="hero-mockup__th">STATUS</div>
+                <div class="hero-mockup__th hero-mockup__th--right">TIMELINE</div>
+
+                <div class="hero-mockup__cell hero-mockup__cell--name">
+                  <span class="hero-mockup__dot hero-mockup__dot--orange"></span>
+                  <span>AI Summaries Engine</span>
+                </div>
+                <div class="hero-mockup__cell"><span class="hero-mockup__pill hero-mockup__pill--review">IN REVIEW</span></div>
+                <div class="hero-mockup__cell hero-mockup__date">Aug 12</div>
+
+                <div class="hero-mockup__cell hero-mockup__cell--name">
+                  <span class="hero-mockup__dot hero-mockup__dot--blue"></span>
+                  <span>Mobile Workspace Refactor</span>
+                </div>
+                <div class="hero-mockup__cell"><span class="hero-mockup__pill hero-mockup__pill--progress">IN PROGRESS</span></div>
+                <div class="hero-mockup__cell hero-mockup__date">Sept 01</div>
+
+                <div class="hero-mockup__cell hero-mockup__cell--name">
+                  <span class="hero-mockup__dot hero-mockup__dot--teal"></span>
+                  <span>Sidebar Customization</span>
+                </div>
+                <div class="hero-mockup__cell"><span class="hero-mockup__pill hero-mockup__pill--done">DONE</span></div>
+                <div class="hero-mockup__cell hero-mockup__date">July 28</div>
+
+                <div class="hero-mockup__cell hero-mockup__cell--name">
+                  <span class="hero-mockup__dot hero-mockup__dot--pink"></span>
+                  <span>Enterprise Permissions</span>
+                </div>
+                <div class="hero-mockup__cell"><span class="hero-mockup__pill hero-mockup__pill--backlog">BACKLOG</span></div>
+                <div class="hero-mockup__cell hero-mockup__date">TBD</div>
+
+                <div class="hero-mockup__cell hero-mockup__cell--name">
+                  <span class="hero-mockup__dot hero-mockup__dot--purple"></span>
+                  <span>Global Search Overhaul</span>
+                </div>
+                <div class="hero-mockup__cell"><span class="hero-mockup__pill hero-mockup__pill--planned">PLANNED</span></div>
+                <div class="hero-mockup__cell hero-mockup__date">Oct 15</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SOCIAL PROOF — Infinite CSS marquee
+    ════════════════════════════════════════════ -->
+    <section class="marquee-section" aria-label="Trusted by companies">
+      <p class="marquee-label" data-en="Trusted by over 30 million people and teams" data-kh="ទុកចិត្តដោយមនុស្ស និងក្រុមជាង ៣០ លាននាក់">Trusted by over 30 million people and teams</p>
+      <div class="marquee-viewport">
+      <div class="marquee-track" aria-hidden="true">
+        <!-- First set -->
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/figma" alt="" width="18" height="18" loading="lazy">Figma</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/vercel/000000" alt="" width="18" height="18" loading="lazy">Vercel</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/loom" alt="" width="18" height="18" loading="lazy">Loom</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/linear" alt="" width="18" height="18" loading="lazy">Linear</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/replit" alt="" width="18" height="18" loading="lazy">Replit</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/pitch.com" alt="" width="18" height="18" loading="lazy">Pitch</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/codeium.com" alt="" width="18" height="18" loading="lazy">Codeium</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/brex" alt="" width="18" height="18" loading="lazy">Brex</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/retool" alt="" width="18" height="18" loading="lazy">Retool</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/airtable" alt="" width="18" height="18" loading="lazy">Airtable</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/superhuman.com" alt="" width="18" height="18" loading="lazy">Superhuman</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/perplexity" alt="" width="18" height="18" loading="lazy">Perplexity</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/webflow" alt="" width="18" height="18" loading="lazy">Webflow</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/deel.com" alt="" width="18" height="18" loading="lazy">Deel</span>
+        <!-- Duplicate for seamless loop -->
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/figma" alt="" width="18" height="18" loading="lazy">Figma</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/vercel/000000" alt="" width="18" height="18" loading="lazy">Vercel</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/loom" alt="" width="18" height="18" loading="lazy">Loom</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/linear" alt="" width="18" height="18" loading="lazy">Linear</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/replit" alt="" width="18" height="18" loading="lazy">Replit</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/pitch.com" alt="" width="18" height="18" loading="lazy">Pitch</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/codeium.com" alt="" width="18" height="18" loading="lazy">Codeium</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/brex" alt="" width="18" height="18" loading="lazy">Brex</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/retool" alt="" width="18" height="18" loading="lazy">Retool</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/airtable" alt="" width="18" height="18" loading="lazy">Airtable</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/superhuman.com" alt="" width="18" height="18" loading="lazy">Superhuman</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/perplexity" alt="" width="18" height="18" loading="lazy">Perplexity</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://cdn.simpleicons.org/webflow" alt="" width="18" height="18" loading="lazy">Webflow</span>
+        <span class="marquee-badge"><img class="marquee-badge__logo" src="https://icon.horse/icon/deel.com" alt="" width="18" height="18" loading="lazy">Deel</span>
+      </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRODUCT SHOWCASE — Real dashboard preview
+    ════════════════════════════════════════════ -->
+    <section class="section showcase-section" aria-labelledby="showcase-heading">
+      <div class="container">
+        <div class="showcase reveal">
+          <div class="showcase__copy">
+            <div class="badge badge--primary" style="margin-bottom: 16px;" data-en="See it in action" data-kh="មើលវាដំណើរការ">See it in action</div>
+            <h2 id="showcase-heading" class="text-h1" data-en="Your work, one click away." data-kh="ការងាររបស់អ្នក នៅចុចតែម្តង">Your work, one click away.</h2>
+            <p class="text-body-md text-muted" style="margin-top: 16px; line-height: 1.6;" data-en="A clean, focused dashboard that brings your docs, tasks, and team activity together the moment you sign in." data-kh="ផ្ទាំងគ្រប់គ្រងស្អាត និងស្រួលផ្តោតអារម្មណ៍ ដែលប្រមូលឯកសារ កិច្ចការ និងសកម្មភាពក្រុមរបស់អ្នកមកជាមួយគ្នា ពេលអ្នកចូលប្រើគណនី។">
+              A clean, focused dashboard that brings your docs, tasks, and team activity together the moment you sign in.
+            </p>
+          </div>
+
+          <figure class="showcase__frame">
+            <div class="hero-mockup__card showcase__window">
+              <div class="hero-mockup__titlebar">
+                <span class="hero-mockup__traffic">
+                  <i class="hero-mockup__tl hero-mockup__tl--red"></i>
+                  <i class="hero-mockup__tl hero-mockup__tl--amber"></i>
+                  <i class="hero-mockup__tl hero-mockup__tl--green"></i>
+                </span>
+                <span class="hero-mockup__winlabel">app.notion.so</span>
+                <span class="hero-mockup__traffic hero-mockup__traffic--spacer" aria-hidden="true"></span>
+              </div>
+              <img src="/saas/dashboard-light.png" alt="The Notion dashboard showing recent pages, tasks, and team activity" class="showcase__img" loading="lazy" width="1600" height="1000" />
+            </div>
+          </figure>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         FEATURES — 3-column bento grid
+    ════════════════════════════════════════════ -->
+    <section class="section features-section" id="features" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+          <div class="badge badge--primary" style="margin-bottom: 16px;" data-en="What you can do" data-kh="អ្វីៗដែលអ្នកអាចធ្វើបាន">What you can do</div>
+          <h2 id="features-heading" class="text-h1">
+            <span data-en="One workspace." data-kh="កន្លែងធ្វើការតែមួយ">One workspace.</span><br />
+            <span data-en="Every kind of work." data-kh="គ្រប់ប្រភេទការងារ">Every kind of work.</span>
+          </h2>
+          <p class="text-body-md text-muted" style="margin-top: 16px; max-width: 520px; margin-left:auto; margin-right:auto; line-height:1.6;" data-en="Notion replaces the patchwork of tabs you manage every day. Docs, tasks, wikis, and databases all live in one place." data-kh="Notion ជំនួស tabs ជាច្រើនដែលអ្នកគ្រប់គ្រងរាល់ថ្ងៃ។ ឯកសារ កិច្ចការ Wikis និងមូលដ្ឋានទិន្នន័យ(Database) សុទ្ធតែនៅកន្លែងតែមួយ">
+            Notion replaces the patchwork of tabs you manage every day. Docs, tasks, wikis, and databases all live in one place.
+          </p>
+        </div>
+
+        <div class="bento">
+
+          <article class="feature-card bento__a reveal" style="--i:0">
+            <div class="feature-card__band feature-card__band--purple" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4z"/></svg>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title" data-en="Docs that do more" data-kh="Docs​ ដែលមានមុខងារជាច្រើន">Docs that do more</h3>
+              <p class="feature-card__desc" data-en="Write meeting notes, specs, and proposals, then let AI polish them, translate them, or turn them into action items automatically." data-kh="សរសេរកំណត់ហេតុប្រជុំ ឯកសារបច្ចេកទេស(Specs) និងសំណើ ដោយបន្ទាប់មកឲ្យ AI កែលម្អ បកប្រែ ឬប្ដូរវាទៅជា Action Items ដោយស្វ័យប្រវត្តិ">Write meeting notes, specs, and proposals, then let AI polish them, translate them, or turn them into action items automatically.</p>
+            </div>
+          </article>
+
+          <article class="feature-card bento__b reveal" style="--i:1">
+            <div class="feature-card__band feature-card__band--teal" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title" data-en="Databases built for teams" data-kh="មូលដ្ឋានទិន្នន័យសម្រាប់ក្រុម">Databases built for teams</h3>
+              <p class="feature-card__desc" data-en="Filter, sort, and relate your data in boards, calendars, tables, or timelines. One source of truth that everyone can see and update." data-kh="តម្រៀប និងភ្ជាប់ទិន្នន័យរបស់អ្នកក្នុងផ្ទាំងគ្រប់គ្រងការងារ ប្រតិទិន តារាង ឬបន្ទាត់ពេលវេលា ទៅក្នុងប្រភពតែមួយដែលគ្រប់គ្នាអាចមើល និងកែបាន">Filter, sort, and relate your data in boards, calendars, tables, or timelines. One source of truth that everyone can see and update.</p>
+            </div>
+          </article>
+
+          <article class="feature-card bento__c reveal" style="--i:2">
+            <div class="feature-card__band feature-card__band--pink" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title" data-en="AI that knows your work" data-kh="AI ដែលស្គាល់ការងាររបស់អ្នក">AI that knows your work</h3>
+              <p class="feature-card__desc" data-en="Ask questions across all your pages. Auto-fill properties, summarize meetings, and draft documents with real context." data-kh="សួរសំណួរឆ្លងកាត់គ្រប់ទំព័រ បំពេញលក្ខណៈ(Properties)ដោយស្វ័យប្រវត្តិ សង្ខេបការប្រជុំ និងតាក់តែងឯកសារដោយមានបរិបទពិតប្រាកដ">Ask questions across all your pages. Auto-fill properties, summarize meetings, and draft documents with real context.</p>
+            </div>
+          </article>
+
+          <article class="feature-card bento__d reveal" style="--i:3">
+            <div class="feature-card__band feature-card__band--sky" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title" data-en="Connected to your stack" data-kh="ភ្ជាប់ជាមួយឧបករណ៍របស់អ្នក">Connected to your stack</h3>
+              <p class="feature-card__desc" data-en="Pull in data from GitHub, Jira, Slack, and 100+ apps without leaving your page." data-kh="ទាញទិន្នន័យពី GitHub, Jira, Slack និងកម្មវិធីជាង ១០០ ដោយមិនចាកចេញពីទំព័រ">Pull in data from GitHub, Jira, Slack, and 100+ apps without leaving your page.</p>
+            </div>
+          </article>
+
+          <article class="feature-card bento__e reveal" style="--i:4">
+            <div class="feature-card__band feature-card__band--orange" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title" data-en="Automations, no code needed" data-kh="ស្វ័យប្រវត្តិកម្ម ដោយមិនត្រូវការកូដ">Automations, no code needed</h3>
+              <p class="feature-card__desc" data-en="Set up rules that move tasks, send Slack messages, or update properties when anything changes. Your workflow runs itself." data-kh="កំណត់លក្ខខណ្ឌដែលផ្លាស់ទីកិច្ចការ ផ្ញើសារ Slack ឬធ្វើបច្ចុប្បន្នភាពលក្ខណៈ នៅពេលមានការផ្លាស់ប្ដូរ ដោយលំហូរការងាររបស់អ្នកដំណើរការដោយខ្លួនឯង">Set up rules that move tasks, send Slack messages, or update properties when anything changes. Your workflow runs itself.</p>
+            </div>
+          </article>
+
+          <article class="feature-card bento__f reveal" style="--i:5">
+            <div class="feature-card__band feature-card__band--green" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div class="feature-card__body">
+              <h3 class="feature-card__title" data-en="Enterprise-grade security" data-kh="សុវត្ថិភាពកម្រិតសហគ្រាស">Enterprise-grade security</h3>
+              <p class="feature-card__desc" data-en="SOC 2 Type II, HIPAA compliance, and advanced permission controls. Your data stays where you put it, visible only to who you choose." data-kh="SOC 2 Type II ការអនុលោម HIPAA និងការគ្រប់គ្រងសិទ្ធិកម្រិតខ្ពស់។ ទិន្នន័យរបស់អ្នកនឹងស្ថិតនៅកន្លែងដែលបានបញ្ចូល និងមើលឃើញសម្រាប់តែអ្នកដែលអ្នកបានជ្រើសរើស">SOC 2 Type II, HIPAA compliance, and advanced permission controls. Your data stays where you put it, visible only to who you choose.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         SOLUTIONS — Built for every team
+    ════════════════════════════════════════════ -->
+    <section class="section solutions-section" id="solutions" aria-labelledby="solutions-heading">
+      <div class="container">
+        <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+          <div class="badge badge--primary" style="margin-bottom: 16px;" data-en="Solutions" data-kh="ដំណោះស្រាយ">Solutions</div>
+          <h2 id="solutions-heading" class="text-h1">
+            <span data-en="Built for the way" data-kh="បង្កើតឡើងសម្រាប់របៀប">Built for the way</span><br />
+            <span data-en="your team works." data-kh="ដែលក្រុមរបស់អ្នកធ្វើការ">your team works.</span>
+          </h2>
+          <p class="text-body-md text-muted" style="margin-top: 16px; max-width: 540px; margin-left:auto; margin-right:auto; line-height:1.6;" data-en="From building products to launching campaigns, every team shapes Notion around how they already work. No rigid templates required." data-kh="ចាប់ពីការបង្កើតផលិតផល រហូតដល់ការផ្សព្វផ្សាយយុទ្ធនាការ, ក្រុមនីមួយៗរៀបចំ Notion តាមរបៀបដែលពួកគេធ្វើការរួចហើយ ដោយមិនត្រូវការគំរូដែលមិនអាចកែប្រែបាន។">
+            From engineering sprints to marketing calendars, every team shapes Notion around how they already work. No rigid templates required.
+          </p>
+        </div>
+
+        <div class="solutions-grid">
+
+          <article class="solution-card reveal" tabindex="0" style="--i:0">
+            <span class="solution-card__icon solution-card__icon--purple" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <h3 class="solution-card__title" data-en="Engineering" data-kh="វិស្វកម្ម">Engineering</h3>
+            <p class="solution-card__desc" data-en="Keep specs, sprints, and docs in one connected workspace, so context never gets lost between tools." data-kh="រក្សាឯកសារបច្ចេកទេស កិច្ចការ sprint និងឯកសារនៅកន្លែងតែមួយ ដើម្បីកុំឲ្យបាត់បរិបទរវាងឧបករណ៍។">Keep specs, sprints, and docs in one connected workspace, so context never gets lost between tools.</p>
+          </article>
+
+          <article class="solution-card reveal" tabindex="0" style="--i:1">
+            <span class="solution-card__icon solution-card__icon--sky" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </span>
+            <h3 class="solution-card__title" data-en="Product" data-kh="ផលិតផល">Product</h3>
+            <p class="solution-card__desc" data-en="Plan roadmaps and track launches in real time, so the whole team knows what ships next without a status meeting." data-kh="រៀបចំផែនការ និងតាមដានការចេញផ្សាយតាមពេលវេលាជាក់ស្តែង ដើម្បីឲ្យក្រុមដឹងពីអ្វីដែលនឹងចេញបន្ទាប់ ដោយមិនចាំបាច់ប្រជុំ។">Plan roadmaps and track launches in real time, so the whole team knows what ships next without a status meeting.</p>
+          </article>
+
+          <article class="solution-card reveal" tabindex="0" style="--i:2">
+            <span class="solution-card__icon solution-card__icon--pink" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+            </span>
+            <h3 class="solution-card__title" data-en="Marketing" data-kh="ទីផ្សារ">Marketing</h3>
+            <p class="solution-card__desc" data-en="Run campaigns, content calendars, and launches from a single hub the whole team can see and edit." data-kh="ដំណើរការយុទ្ធនាការ ប្រតិទិនមាតិកា និងការចេញផ្សាយ ពីមជ្ឈមណ្ឌលតែមួយ ដែលក្រុមអាចមើល និងកែបាន។">Run campaigns, content calendars, and launches from a single hub the whole team can see and edit.</p>
+          </article>
+
+          <article class="solution-card reveal" tabindex="0" style="--i:3">
+            <span class="solution-card__icon solution-card__icon--orange" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="12" r="2.5"/><circle cx="17" cy="14" r="2.5"/><circle cx="10" cy="19" r="2.5"/></svg>
+            </span>
+            <h3 class="solution-card__title" data-en="Design" data-kh="រចនា">Design</h3>
+            <p class="solution-card__desc" data-en="Keep briefs, feedback, and assets right beside the work, so nothing slips through scattered threads." data-kh="រក្សាការណែនាំ មតិកែលម្អ និងធនធាននៅជាប់នឹងការងារ ដើម្បីកុំឲ្យមានអ្វីបាត់ក្នុងសន្ទនាបែកខ្ញែក។">Keep briefs, feedback, and assets right beside the work, so nothing slips through scattered threads.</p>
+          </article>
+
+          <article class="solution-card reveal" tabindex="0" style="--i:4">
+            <span class="solution-card__icon solution-card__icon--green" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            <h3 class="solution-card__title" data-en="Startups" data-kh="ក្រុមហ៊ុនទើបបង្កើតថ្មី">Startups</h3>
+            <p class="solution-card__desc" data-en="Run your whole company in one place from day one, then scale the same workspace as the team grows." data-kh="ដំណើរការក្រុមហ៊ុនទាំងមូលនៅកន្លែងតែមួយតាំងពីថ្ងៃដំបូង បន្ទាប់មកពង្រីកកន្លែងធ្វើការនោះទៅតាមការរីកចម្រើន។">Run your whole company in one place from day one, then scale the same workspace as the team grows.</p>
+          </article>
+
+          <article class="solution-card reveal" tabindex="0" style="--i:5">
+            <span class="solution-card__icon solution-card__icon--teal" aria-hidden="true">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <h3 class="solution-card__title" data-en="HR and Operations" data-kh="ធនធានមនុស្ស(HR) និងប្រតិបត្តិការ">HR and Operations</h3>
+            <p class="solution-card__desc" data-en="Onboard new hires, document processes, and standardize how the team works in one shared home." data-kh="ទទួលបុគ្គលិកថ្មី កត់ត្រាដំណើរការ និងធ្វើស្តង់ដារពីរបៀបធ្វើការរបស់ក្រុមនៅកន្លែងរួមតែមួយ។">Onboard new hires, document processes, and standardize how the team works in one shared home.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         PRICING — Monthly/Yearly toggle
+    ════════════════════════════════════════════ -->
+    <section class="section pricing-section" id="pricing" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 16px;">
+          <div class="badge badge--primary" style="margin-bottom: 16px;" data-en="Simple pricing" data-kh="តម្លៃសមរម្យ">Simple pricing</div>
+          <h2 id="pricing-heading" class="text-h1" data-en="Plans and features" data-kh="គម្រោង និងលក្ខណៈពិសេស">Plans and features</h2>
+          <p class="text-body-sm text-muted" style="margin-top: 12px;" data-en="Start free. Add your team. Scale as you grow." data-kh="ចាប់ផ្ដើមឥតគិតថ្លៃ បន្ថែមក្រុមរបស់អ្នក ពង្រីកតាមការរីកចម្រើន">
+            Start free. Add your team. Scale as you grow.
+          </p>
+        </div>
+
+        <!-- Pricing toggle — CSS only via :checked sibling -->
+        <input type="checkbox" id="pricing-toggle" />
+
+        <div class="pricing-toggle-wrapper">
+          <label for="pricing-toggle" class="pricing-toggle-label" data-en="Monthly" data-kh="ប្រចាំខែ">Monthly</label>
+          <label for="pricing-toggle" class="pricing-toggle-switch" aria-label="Switch to yearly billing"></label>
+          <label for="pricing-toggle" class="pricing-toggle-label">
+            <span data-en="Yearly" data-kh="ប្រចាំឆ្នាំ">Yearly</span>
+            <span class="badge badge--green" style="margin-left: 6px; vertical-align: middle;" data-en="Save 20%" data-kh="សន្សំ ២០%">Save 20%</span>
+          </label>
+        </div>
+
+        <div class="pricing-grid">
+
+          <!-- Free -->
+          <div class="pricing-card">
+            <p class="pricing-card__tier-label" data-en="Free" data-kh="ឥតគិតថ្លៃ">Free</p>
+
+            <div class="price-monthly">
+              <div class="pricing-card__price">$0<span data-en=" / month" data-kh=" / ខែ"> / month</span></div>
+            </div>
+            <div class="price-yearly">
+              <div class="pricing-card__price">$0<span data-en=" / month" data-kh=" / ខែ"> / month</span></div>
+            </div>
+
+            <p class="pricing-card__desc" data-en="For individuals exploring Notion on their own." data-kh="សម្រាប់បុគ្គលដែលស្វែងយល់ Notion ដោយខ្លួនឯង">For individuals exploring Notion on their own.</p>
+
+            <a href="signup.html" class="btn-utility" style="display:block; text-align:center; margin-bottom: var(--space-md);" data-en="Get started free" data-kh="ចាប់ផ្ដើមដោយឥតគិតថ្លៃ">Get started free</a>
+
+            <hr class="pricing-card__divider" />
+
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-en="Unlimited pages and blocks" data-kh="ទំព័រ និងប្លុកគ្មានដែនកំណត់">Unlimited pages and blocks</li>
+              <li class="pricing-card__feature" data-en="Connect 10 integrations" data-kh="ភ្ជាប់ការរួមបញ្ចូល ១០">Connect 10 integrations</li>
+              <li class="pricing-card__feature" data-en="Basic page analytics" data-kh="ការវិភាគទិន្នន័យទំព័រមូលដ្ឋាន">Basic page analytics</li>
+              <li class="pricing-card__feature" data-en="7-day page history" data-kh="ប្រវត្តិទំព័រ ៧ ថ្ងៃ">7-day page history</li>
+              <li class="pricing-card__feature" data-en="Invite 10 guests" data-kh="អញ្ជើញភ្ញៀវ ១០ នាក់">Invite 10 guests</li>
+            </ul>
+          </div>
+
+          <!-- Pro — Featured -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-card__popular">
+              <span class="badge badge--popular" data-en="Most Popular" data-kh="ពេញនិយមបំផុត">Most Popular</span>
+            </div>
+
+            <p class="pricing-card__tier-label">Pro</p>
+
+            <div class="price-monthly">
+              <div class="pricing-card__price">$12<span data-en=" / month" data-kh=" / ខែ"> / month</span></div>
+            </div>
+            <div class="price-yearly">
+              <div class="pricing-card__price">$8<span data-en=" / month" data-kh=" / ខែ"> / month</span></div>
+            </div>
+
+            <p class="pricing-card__desc" data-en="For individuals who want unlimited power and AI." data-kh="សម្រាប់បុគ្គលដែលចង់បានថាមពលគ្មានដែនកំណត់ និង AI">For individuals who want unlimited power and AI.</p>
+
+            <a href="signup.html" class="btn-primary" style="display:block; text-align:center; margin-bottom: var(--space-md);" data-en="Start for free" data-kh="ចាប់ផ្ដើមឥតគិតថ្លៃ">Start for free</a>
+
+            <hr class="pricing-card__divider" />
+
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-en="Everything in Free" data-kh="អ្វីៗទាំងអស់ដែលមានក្នុង Free">Everything in Free</li>
+              <li class="pricing-card__feature" data-en="Unlimited integrations" data-kh="ការរួមបញ្ចូលគ្មានដែនកំណត់">Unlimited integrations</li>
+              <li class="pricing-card__feature" data-en="Unlimited page history" data-kh="ប្រវត្តិទំព័រគ្មានដែនកំណត់">Unlimited page history</li>
+              <li class="pricing-card__feature" data-en="Invite 100 guests" data-kh="អញ្ជើញភ្ញៀវ ១០០ នាក់">Invite 100 guests</li>
+              <li class="pricing-card__feature" data-en="Advanced analytics" data-kh="ការវិភាគកម្រិតខ្ពស់">Advanced analytics</li>
+              <li class="pricing-card__feature" data-en="Notion AI included" data-kh="រួមបញ្ចូល Notion AI">Notion AI included</li>
+            </ul>
+          </div>
+
+          <!-- Team -->
+          <div class="pricing-card">
+            <p class="pricing-card__tier-label" data-en="Team" data-kh="ក្រុម">Team</p>
+
+            <div class="price-monthly">
+              <div class="pricing-card__price">$18<span data-en=" / seat/mo" data-kh=" / កៅអី/ខែ"> / seat/mo</span></div>
+            </div>
+            <div class="price-yearly">
+              <div class="pricing-card__price">$15<span data-en=" / seat/mo" data-kh=" / កៅអី/ខែ"> / seat/mo</span></div>
+            </div>
+
+            <p class="pricing-card__desc" data-en="For teams that need collaboration, permissions, and shared AI." data-kh="សម្រាប់ក្រុមដែលត្រូវការសហការ ការអនុញ្ញាត និង AI រួមគ្នា">For teams that need collaboration, permissions, and shared AI.</p>
+
+            <a href="signup.html" class="btn-utility" style="display:block; text-align:center; margin-bottom: var(--space-md);" data-en="Start a team trial" data-kh="ចាប់ផ្ដើមសាកល្បងក្រុម">Start a team trial</a>
+
+            <hr class="pricing-card__divider" />
+
+            <ul class="pricing-card__features">
+              <li class="pricing-card__feature" data-en="Everything in Pro" data-kh="អ្វីៗទាំងអស់ក្នុង Pro">Everything in Pro</li>
+              <li class="pricing-card__feature" data-en="Collaborative workspaces" data-kh="កន្លែងធ្វើការរួមគ្នា">Collaborative workspaces</li>
+              <li class="pricing-card__feature" data-en="Team permission groups" data-kh="ក្រុមសិទ្ធិសម្រាប់ក្រុម">Team permission groups</li>
+              <li class="pricing-card__feature" data-en="Bulk PDF export" data-kh="នាំចេញ PDF ច្រើន">Bulk PDF export</li>
+              <li class="pricing-card__feature" data-en="Admin panel &amp; audit log" data-kh="ផ្ទាំងគ្រប់គ្រង និងកំណត់ហេតុត្រួតពិនិត្យ">Admin panel &amp; audit log</li>
+              <li class="pricing-card__feature" data-en="Priority support" data-kh="ការគាំទ្រអាទិភាព">Priority support</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <p class="pricing-yearly-note">
+          <span data-en="Enterprise plans available." data-kh="មានគម្រោងសហគ្រាស">Enterprise plans available.</span> <a href="contact.html" style="color: var(--color-primary);" data-en="Talk to sales →" data-kh="និយាយជាមួយផ្នែកលក់ →">Talk to sales →</a>
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         DOWNLOAD — Get the apps
+    ════════════════════════════════════════════ -->
+    <section class="section download-section" id="download" aria-labelledby="download-heading">
+      <div class="container">
+        <div class="download-card reveal">
+          <div class="download-card__content">
+            <div class="badge badge--primary" style="margin-bottom: 16px;" data-en="Download" data-kh="ទាញយក">Download</div>
+            <h2 id="download-heading" class="text-h1" data-en="Notion works wherever you do." data-kh="Notion ដំណើរការគ្រប់ទីកន្លែងដែលអ្នកនៅ">Notion works wherever you do.</h2>
+            <p class="text-body-md text-muted" style="margin-top: 16px; max-width: 460px; line-height: 1.6;" data-en="Start in your browser right now, or get the desktop and mobile apps to keep your workspace a click away." data-kh="ចាប់ផ្ដើមក្នុងកម្មវិធីរុករករបស់អ្នកឥឡូវនេះ ឬទាញយកកម្មវិធីលើកុំព្យូទ័រ និងទូរស័ព្ទ ដើម្បីឲ្យកន្លែងធ្វើការរបស់អ្នកនៅជិតតែមួយចុច។">
+              Start in your browser right now, or get the desktop and mobile apps to keep your workspace a click away.
+            </p>
+            <div class="download-card__actions">
+              <a href="dashboard.html" class="btn-primary" data-en="Open in browser" data-kh="បើកក្នុងកម្មវិធីរុករក">Open in browser</a>
+              <a href="signup.html" class="btn-ghost" data-en="Create free account" data-kh="បង្កើតគណនីឥតគិតថ្លៃ">Create free account</a>
+            </div>
+          </div>
+
+          <ul class="download-platforms" aria-label="Available platforms">
+            <li class="download-platform">
+              <span class="download-platform__icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg></span>
+              <span>
+                <span class="download-platform__name">macOS</span>
+                <span class="download-platform__type text-muted" data-en="Desktop app" data-kh="កម្មវិធីលើកុំព្យូទ័រ">Desktop app</span>
+              </span>
+            </li>
+            <li class="download-platform">
+              <span class="download-platform__icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg></span>
+              <span>
+                <span class="download-platform__name">Windows</span>
+                <span class="download-platform__type text-muted" data-en="Desktop app" data-kh="កម្មវិធីលើកុំព្យូទ័រ">Desktop app</span>
+              </span>
+            </li>
+            <li class="download-platform">
+              <span class="download-platform__icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg></span>
+              <span>
+                <span class="download-platform__name">iOS</span>
+                <span class="download-platform__type text-muted" data-en="Mobile app" data-kh="កម្មវិធីទូរស័ព្ទ">Mobile app</span>
+              </span>
+            </li>
+            <li class="download-platform">
+              <span class="download-platform__icon" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3435-4.1021-2.6892-7.5743-6.1185-9.4396"/></svg></span>
+              <span>
+                <span class="download-platform__name">Android</span>
+                <span class="download-platform__type text-muted" data-en="Mobile app" data-kh="កម្មវិធីទូរស័ព្ទ">Mobile app</span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════
+       FOOTER — 4-column links
+  ════════════════════════════════════════════ -->
+  <footer class="footer" aria-label="Site footer">
+    <div class="container">
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+          <a href="index.html" class="nav__logo" style="font-size:17px; font-weight:700; text-decoration:none; color:var(--color-text-primary); display:flex; align-items:center; gap:8px;">
+            <span class="nav__logo-mark" style="width:24px; height:24px;" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L11.31 19s0 .84-1.167.84l-3.222.186c-.093-.187 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span>
+            Notion
+          </a>
+          <p data-en="The connected workspace where better, faster work happens." data-kh="កន្លែងធ្វើការដែលភ្ជាប់គ្នា ជាកន្លែងដែលការងារកាន់តែប្រសើរ និងលឿនកើតឡើង">The connected workspace where better, faster work happens.</p>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title" data-en="Product" data-kh="ផលិតផល">Product</p>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link" data-en="Pages &amp; Docs" data-kh="ទំព័រ និងឯកសារ">Pages &amp; Docs</a></li>
+            <li><a href="#" class="footer__link" data-en="Databases" data-kh="មូលដ្ឋានទិន្នន័យ">Databases</a></li>
+            <li><a href="#" class="footer__link" data-en="AI" data-kh="AI">AI</a></li>
+            <li><a href="#" class="footer__link" data-en="Integrations" data-kh="ការរួមបញ្ចូល">Integrations</a></li>
+            <li><a href="/#pricing" class="footer__link" data-en="Pricing" data-kh="តម្លៃ">Pricing</a></li>
+            <li><a href="dashboard.html" class="footer__link" data-en="Open App" data-kh="បើកកម្មវិធី">Open App</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title" data-en="Company" data-kh="ក្រុមហ៊ុន">Company</p>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link" data-en="About" data-kh="អំពី">About</a></li>
+            <li><a href="#" class="footer__link" data-en="Careers" data-kh="ការងារ">Careers</a></li>
+            <li><a href="#" class="footer__link" data-en="Blog" data-kh="ប្លុក">Blog</a></li>
+            <li><a href="#" class="footer__link" data-en="Newsroom" data-kh="បន្ទប់ព័ត៌មាន">Newsroom</a></li>
+            <li><a href="contact.html" class="footer__link" data-en="Contact sales" data-kh="ទាក់ទងផ្នែកលក់">Contact sales</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__col">
+          <p class="footer__col-title" data-en="Resources" data-kh="ធនធាន">Resources</p>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link" data-en="Help center" data-kh="មជ្ឈមណ្ឌលជំនួយ">Help center</a></li>
+            <li><a href="#" class="footer__link" data-en="API docs" data-kh="ឯកសារ API">API docs</a></li>
+            <li><a href="#" class="footer__link" data-en="Community" data-kh="សហគមន៍">Community</a></li>
+            <li><a href="#" class="footer__link" data-en="What's new" data-kh="អ្វីថ្មី">What's new</a></li>
+            <li><a href="#" class="footer__link" data-en="Status" data-kh="ស្ថានភាព">Status</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span data-en="© 2026 Notion Labs, Inc. All rights reserved." data-kh="© 2026 Notion Labs, Inc. រក្សាសិទ្ធិគ្រប់យ៉ាង">&copy; 2026 Notion Labs, Inc. All rights reserved.</span>
+        <div class="footer__bottom-links">
+          <a href="#" class="footer__link" data-en="Privacy Policy" data-kh="គោលការណ៍ឯកជនភាព">Privacy Policy</a>
+          <a href="#" class="footer__link" data-en="Terms" data-kh="លក្ខខណ្ឌ">Terms</a>
+          <a href="#" class="footer__link" data-en="Cookie Settings" data-kh="ការកំណត់ខូគី">Cookie Settings</a>
+          <a href="#" class="footer__link" data-en="Sitemap" data-kh="ផែនទីគេហទំព័រ">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/saas/i18n.js"></script>
+  <script src="/saas/theme.js"></script>
+  <script src="/saas/nav.js"></script>
+
+  <!-- Scroll-reveal motion (vanilla; respects reduced-motion and degrades to
+       fully visible if IntersectionObserver is unavailable). -->
+  <script>
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      var i;
+      var reduce = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (reduce || !('IntersectionObserver' in window)) {
+        for (i = 0; i < els.length; i++) { els[i].classList.add('is-visible'); }
+        return;
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        for (var j = 0; j < entries.length; j++) {
+          if (entries[j].isIntersecting) {
+            entries[j].target.classList.add('is-visible');
+            io.unobserve(entries[j].target);
+          }
+        }
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+      for (i = 0; i < els.length; i++) { io.observe(els[i]); }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Log in | Notion</title>
+<meta name="description" content="Log in to your Notion workspace." />
+<meta property="og:title" content="Log in | Notion" />
+<meta property="og:description" content="Log in to your Notion workspace." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="/saas/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="/saas/styles.css" />
+<link rel="stylesheet" href="/saas/polish.css" />
+<script>
+  // Prevent theme flash — mirrors the app's inline theme init.
+  (function(){
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+    } catch(e) {}
+  })();
+</script>
+</head>
+<body>
+
+
+  <a class="skip-link" href="#main-content" data-en="Skip to content" data-kh="រំលងទៅមាតិកា">Skip to content</a>
+
+  <main class="auth-page" id="main-content" tabindex="-1">
+
+    <div class="floating-toggles">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+      <button class="lang-toggle" type="button" aria-label="Switch language"></button>
+    </div>
+
+    <a href="index.html" class="auth-logo" aria-label="Back to Notion home">
+      <span class="nav__logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L11.31 19s0 .84-1.167.84l-3.222.186c-.093-.187 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span>
+      Notion
+    </a>
+
+    <div class="hero-stars hero-stars--soft" aria-hidden="true">
+      <span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span>
+      <span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span>
+    </div>
+
+    <div class="auth-card is-floating">
+      <h1 class="auth-card__title" data-en="Welcome back" data-kh="សូមស្វាគមន៍ត្រឡប់មកវិញ">Welcome back</h1>
+      <p class="auth-card__sub" data-en="Log in to your workspace to pick up where you left off." data-kh="ចូលទៅកន្លែងធ្វើការរបស់អ្នក ដើម្បីបន្តពីកន្លែងដែលអ្នកបានឈប់។">Log in to your workspace to pick up where you left off.</p>
+
+      <!-- Social login -->
+      <div class="auth-social-grid auth-social-grid--mb">
+        <a href="dashboard.html" class="btn-social" aria-label="Continue with Google">
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 01-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z" fill="#4285F4"/>
+              <path d="M9 18c2.43 0 4.467-.806 5.956-2.18l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 009 18z" fill="#34A853"/>
+              <path d="M3.964 10.71A5.41 5.41 0 013.682 9c0-.593.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 000 9c0 1.452.348 2.827.957 4.042l3.007-2.332z" fill="#FBBC05"/>
+              <path d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 00.957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z" fill="#EA4335"/>
+            </svg>
+          </span>
+          <span data-en="Continue with Google" data-kh="បន្តជាមួយ Google">Continue with Google</span>
+        </a>
+
+        <a href="dashboard.html" class="btn-social" aria-label="Continue with Apple">
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M13.87 10.57c-.02-2.27 1.86-3.37 1.94-3.42-1.05-1.54-2.69-1.75-3.28-1.77-1.4-.14-2.73.82-3.44.82-.7 0-1.79-.8-2.94-.78C4.52 5.44 2.9 6.35 2 7.84c-1.8 3.1-.46 7.7 1.3 10.22.87 1.24 1.9 2.63 3.25 2.58 1.31-.05 1.8-.84 3.39-.84 1.58 0 2.03.84 3.42.82 1.4-.03 2.29-1.26 3.14-2.51.99-1.44 1.4-2.83 1.42-2.9-.03-.01-2.72-1.04-2.75-4.14z" fill="currentColor"/>
+              <path d="M11.44 3.3C12.14 2.44 12.61 1.26 12.47 0c-1.15.05-2.54.77-3.36 1.73-.74.85-1.39 2.05-1.22 3.26 1.29.1 2.6-.65 3.55-1.69z" fill="currentColor"/>
+            </svg>
+          </span>
+          <span data-en="Continue with Apple" data-kh="បន្តជាមួយ Apple">Continue with Apple</span>
+        </a>
+
+        <a href="dashboard.html" class="btn-social" aria-label="Continue with GitHub">
+          <span class="btn-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </span>
+          <span data-en="Continue with GitHub" data-kh="បន្តជាមួយ GitHub">Continue with GitHub</span>
+        </a>
+      </div>
+
+      <div class="form-divider" data-en="or log in with email" data-kh="ឬចូលដោយប្រើអ៊ីមែល">or log in with email</div>
+
+      <!-- Email/password form -->
+      <form class="auth-form auth-form--mt" action="dashboard.html" method="get">
+
+        <div class="form-group">
+          <label class="label" for="email" data-en="Email address" data-kh="អាសយដ្ឋានអ៊ីមែល">Email address</label>
+          <div class="input-wrapper">
+            <input
+              class="input-field"
+              type="email"
+              id="email"
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="auth-link-row">
+            <label class="label" for="password" data-en="Password" data-kh="ពាក្យសម្ងាត់">Password</label>
+            <a href="forgot.html" class="auth-link-sm" data-en="Forgot password?" data-kh="ភ្លេចពាក្យសម្ងាត់?">Forgot password?</a>
+          </div>
+          <div class="input-wrapper">
+            <input
+              class="input-field"
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+              minlength="8"
+              autocomplete="current-password"
+              data-en="Enter your password"
+              data-kh="បញ្ចូលពាក្យសម្ងាត់របស់អ្នក"
+              data-i18n-attr="placeholder"
+            />
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary auth-form__submit" data-en="Log in" data-kh="ចូល">
+          Log in
+        </button>
+
+      </form>
+
+      <p class="auth-footer-links">
+        <span data-en="Don't have an account?" data-kh="មិនទាន់មានគណនី?">Don't have an account?</span> <a href="signup.html" data-en="Sign up for free" data-kh="ចុះឈ្មោះឥតគិតថ្លៃ">Sign up for free</a>
+      </p>
+    </div>
+
+  </main>
+
+  <script src="/saas/i18n.js"></script>
+  <script src="/saas/theme.js"></script>
+  <script src="/saas/forms.js"></script>
+
+</body>
+</html>

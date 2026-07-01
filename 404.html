@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Page not found | Notion</title>
+<meta name="description" content="Page not found." />
+<meta property="og:title" content="Page not found | Notion" />
+<meta property="og:description" content="Page not found." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" type="image/svg+xml" href="/saas/favicon.svg" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@500;600;700;800&family=Noto+Sans+Khmer:wght@400;500;600;700&display=swap" />
+<link rel="stylesheet" href="/saas/styles.css" />
+<link rel="stylesheet" href="/saas/polish.css" />
+<script>
+  // Prevent theme flash — mirrors the app's inline theme init.
+  (function(){
+    try {
+      var t = localStorage.getItem('theme');
+      if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      var lang = localStorage.getItem('lang') || 'en';
+      document.documentElement.setAttribute('lang', lang);
+    } catch(e) {}
+  })();
+</script>
+</head>
+<body>
+
+
+  <a class="skip-link" href="#main-content" data-en="Skip to content" data-kh="រំលងទៅមាតិកា">Skip to content</a>
+
+  <main class="auth-page" id="main-content" tabindex="-1">
+
+    <div class="floating-toggles">
+      <button class="theme-toggle" type="button" aria-label="Toggle dark mode"></button>
+      <button class="lang-toggle" type="button" aria-label="Switch language"></button>
+    </div>
+
+    <a href="/index.html" class="auth-logo" aria-label="Back to Notion home">
+      <span class="nav__logo-mark" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L11.31 19s0 .84-1.167.84l-3.222.186c-.093-.187 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632z"/></svg></span>
+      Notion
+    </a>
+
+    <div class="hero-stars hero-stars--soft" aria-hidden="true">
+      <span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span>
+      <span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span><span class="hero-star"></span>
+    </div>
+
+    <div class="auth-card is-floating">
+      <h1 class="auth-card__title auth-card__title--centered" data-en="404. Page not found" data-kh="404. រកមិនឃើញទំព័រ">404. Page not found</h1>
+      <p class="auth-card__sub auth-card__sub--centered" data-en="The page you're looking for doesn't exist or may have moved. Let's get you back on track." data-kh="ទំព័រដែលអ្នកកំពុងស្វែងរកមិនមាន ឬអាចត្រូវបានផ្លាស់ទី។ តោះនាំអ្នកត្រឡប់ទៅវិញ។">
+        The page you're looking for doesn't exist or may have moved. Let's get you back on track.
+      </p>
+
+      <a href="/index.html" class="btn-primary auth-form__submit" data-en="Back to home" data-kh="ត្រឡប់ទៅទំព័រដើម">
+        Back to home
+      </a>
+
+      <p class="auth-footer-links auth-footer-links--mt">
+        <span data-en="Need help?" data-kh="ត្រូវការជំនួយ?">Need help?</span> <a href="/contact.html" data-en="Contact sales" data-kh="ទាក់ទងផ្នែកលក់">Contact sales</a>
+      </p>
+    </div>
+
+  </main>
+
+  <script src="/saas/i18n.js"></script>
+  <script src="/saas/theme.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+/dashboard  /dashboard.html  200
+/login      /login.html      200
+/signup     /signup.html     200
+/forgot     /forgot.html     200
+/reset      /reset.html      200
+/contact    /contact.html    200
+/notfound   /notfound.html   200
+/*          /404.html        404

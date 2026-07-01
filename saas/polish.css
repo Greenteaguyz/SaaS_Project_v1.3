@@ -1,0 +1,749 @@
+/* polish.css — "Layered grid clarity" refinements layered on top of styles.css.
+   Locks Notion Blue palette; polishes cards, buttons, hero rhythm.
+   Preserves Noto Sans Khmer fallback everywhere. */
+
+:root {
+  /* English display + body — Khmer kept in the fallback chain so
+     html[lang="km"] body rules still resolve glyphs cleanly. */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                 'Noto Sans Khmer', Helvetica, Arial, sans-serif;
+  --font-display: 'Inter Tight', 'Inter', 'Noto Sans Khmer',
+                  -apple-system, system-ui, sans-serif;
+
+  /* Hairline borders and softer, layered shadows */
+  --color-border: #e5e5e5;
+  --shadow-card:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 0 0 1px rgba(15, 23, 42, 0.04);
+  --shadow-elevated:
+    0 10px 30px -12px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(15, 23, 42, 0.05);
+  --shadow-nav: 0 1px 0 rgba(15, 23, 42, 0.06);
+
+  /* Slightly rounder cards for the layered feel */
+  --radius-card: 12px;
+}
+
+html[data-theme="dark"] {
+  --color-border: #262626;
+  --shadow-card:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.04);
+  --shadow-elevated:
+    0 10px 30px -12px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+/* Card lift on hover — restrained, matches "Layered grid clarity" */
+.card,
+.feature-card,
+.pricing-card {
+  transition: box-shadow 220ms ease, transform 220ms ease,
+              border-color 220ms ease;
+}
+.card:hover,
+.feature-card:hover,
+.pricing-card:hover {
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+
+/* Primary CTA — crisper hover, subtle shadow */
+.btn-primary {
+  box-shadow: 0 1px 2px rgba(0, 117, 222, 0.20);
+  transition: background-color 160ms ease, box-shadow 200ms ease,
+              transform 160ms ease;
+}
+.btn-primary:hover {
+  box-shadow: 0 6px 18px -6px rgba(0, 117, 222, 0.45);
+  transform: translateY(-1px);
+}
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Secondary / ghost buttons — hairline border, subtle */
+.btn-secondary,
+.btn-ghost {
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+/* Nav polish */
+.nav,
+.site-nav {
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+}
+
+/* Hero body copy — full white for readability on the dark hero */
+.hero-band p,
+.hero p {
+  color: #ffffff !important;
+}
+
+/* Italicize the gradient headline phrase */
+.hero-band__headline--gradient {
+  font-style: italic;
+}
+
+
+/* Section rhythm — a little more breathing room between bands */
+section + section {
+  margin-top: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .feature-card,
+  .pricing-card,
+  .btn-primary {
+    transition: none;
+  }
+  .card:hover,
+  .feature-card:hover,
+  .pricing-card:hover,
+  .btn-primary:hover {
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Contrast safeguards — ensure text meets WCAG AA in BOTH themes.
+   Layered overrides only; no HTML changes.
+   --------------------------------------------------------------- */
+
+/* Dark-mode primary button: white on #4a9eff fails AA (2.75:1).
+   Use ink text on the lighter blue for a crisp, accessible contrast. */
+html[data-theme="dark"] .btn-primary {
+  background-color: #4a9eff;
+  color: #0b1220;
+}
+html[data-theme="dark"] .btn-primary:hover {
+  background-color: #6bb1ff;
+  color: #0b1220;
+}
+
+/* Ghost / secondary buttons in dark mode — keep readable on tinted bg */
+html[data-theme="dark"] .btn-ghost,
+html[data-theme="dark"] .btn-secondary {
+  color: var(--color-text-primary);
+}
+
+/* Plan badges: tinted-on-tint fails contrast. Deepen text in light mode
+   and lift it in dark mode so both PRO/TEAM chips stay legible. */
+.plan-badge--pro { color: #4b2ea3; }
+.plan-badge--team { color: #14615e; }
+html[data-theme="dark"] .plan-badge--pro { color: #c9b6ff; }
+html[data-theme="dark"] .plan-badge--team { color: #7fd3cf; }
+
+/* Section links on tinted pill backgrounds — deepen text a touch */
+.dash-section-link { color: var(--color-primary-active); }
+html[data-theme="dark"] .dash-section-link { color: #8ec5ff; }
+
+/* Hero mockup meta text on the dark slab — lift from 0.55/0.75 to safer levels */
+.hero-mockup__tag { color: rgba(255, 255, 255, 0.72) !important; }
+.hero-mockup__label { color: rgba(255, 255, 255, 0.92) !important; }
+.hero-mockup__title { color: #ffffff !important; }
+
+/* Avatar circles: bump text weight so 3-4:1 chip colors stay readable
+   (WCAG treats bold ≥14pt as large text with 3:1 minimum). */
+.activity-item__avatar,
+.member-strip__avatar {
+  font-weight: 700;
+}
+
+/* Faint text guard — never dip below AA on either surface */
+html:not([data-theme="dark"]) {
+  --color-text-faint: #605c56;
+}
+html[data-theme="dark"] {
+  --color-text-faint: #b8b2aa;
+}
+
+
+
+/* Bootstrap's .text-muted (rgba(33,37,41,.75)) overrides ours and becomes
+   invisible in dark mode. Force our token everywhere. */
+body .text-muted,
+body p.text-muted,
+body span.text-muted,
+body div.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+/* Popular pill on primary bg — white on #4a9eff fails in dark mode */
+html[data-theme="dark"] .badge--popular,
+html[data-theme="dark"] .quick-chip--primary,
+html[data-theme="dark"] .quick-chip--primary * {
+  color: #0b1220 !important;
+}
+
+/* Light-mode tint badges — deepen text for AA */
+.badge--green { color: #128a2c !important; }
+.badge--teal  { color: #1a726f !important; }
+.badge--nav.badge--teal { color: #0f5754 !important; }
+html[data-theme="dark"] .badge--teal { color: #7fd3cf !important; }
+html[data-theme="dark"] .badge--green { color: #7fe19b !important; }
+
+/* Sidebar active + upgrade — deepen blue text over blue tint */
+.sidebar__link--active,
+.sidebar__link--active *,
+.sidebar__upgrade,
+.sidebar__upgrade * {
+  color: var(--color-primary-active) !important;
+}
+html[data-theme="dark"] .sidebar__link--active,
+html[data-theme="dark"] .sidebar__link--active *,
+html[data-theme="dark"] .sidebar__upgrade,
+html[data-theme="dark"] .sidebar__upgrade * {
+  color: #a9ceff !important;
+}
+
+/* Team seats caption — teal on light gray was 3.6 */
+.seats__caption,
+[class*="seats__"] .text-muted {
+  color: var(--color-text-secondary) !important;
+}
+
+/* Sidebar user-plan captions — teal at 3.6 on gray, deepen */
+.sidebar__user-plan,
+.sidebar__user-plan * {
+  color: var(--color-text-secondary) !important;
+}
+
+
+
+/* Empty-state CTA link — deepen for AA */
+.empty-cta { color: var(--color-primary-active) !important; }
+html[data-theme="dark"] .empty-cta { color: #a9ceff !important; }
+
+/* Avatar chips — force dark ink in BOTH themes so any tile hue meets AA */
+.activity-item__avatar,
+.member-strip__avatar,
+.topbar__avatar,
+html[data-theme="dark"] .activity-item__avatar,
+html[data-theme="dark"] .member-strip__avatar,
+html[data-theme="dark"] .topbar__avatar {
+  color: #0b1220 !important;
+  font-weight: 700;
+}
+
+/* Purple avatar override — deepened bg + white text (higher specificity
+   so it wins over the generic ink rule above) */
+html .member-strip__avatar[style*="6d4bd1"],
+html .activity-item__avatar[style*="6d4bd1"] {
+  background: #4b2ea3 !important;
+  color: #ffffff !important;
+}
+
+
+
+
+/* Pricing card featured (dark slab in light mode) — muted price suffix
+   was inheriting light-mode #615d59 on a near-black bg. */
+.pricing-card--featured .pricing-card__price small,
+.pricing-card--featured .pricing-card__price span {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* ---------------------------------------------------------------
+   A11y + polish pass (landing /) — polish.css only, no HTML/JS edits
+   --------------------------------------------------------------- */
+
+/* Focus-visible: consistent, high-contrast ring across interactive elements.
+   Keeps mouse-click focus quiet, only shows on keyboard navigation. */
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-ghost:focus-visible,
+.card:focus-visible,
+.feature-card:focus-visible,
+.pricing-card:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-primary, #0075de);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+html[data-theme="dark"] a:focus-visible,
+html[data-theme="dark"] button:focus-visible,
+html[data-theme="dark"] .btn:focus-visible {
+  outline-color: #8ec5ff;
+}
+
+/* Mobile tap targets — bump primary CTAs and nav controls to ≥44px.
+   Scoped to ≤640px so desktop density is unchanged. */
+@media (max-width: 640px) {
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .btn-utility,
+  .hero .btn,
+  .hero-band .btn,
+  a.btn,
+  button.btn,
+  a.btn-utility {
+    min-height: 44px !important;
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* Header controls (theme toggle, lang switcher) */
+  .nav button,
+  .site-nav button,
+  .topbar button,
+  .lang-switch,
+  .theme-toggle {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* "Talk to sales →" style inline links after CTAs — give them room */
+  .hero a[href*="contact"],
+  .hero-band a[href*="contact"] {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* Unify hairline border color across all card grids so features/pricing/
+   testimonials read as one system. Uses the token so themes still swap. */
+.card,
+.feature-card,
+.pricing-card,
+.testimonial-card {
+  border-color: var(--color-border);
+}
+
+/* Pricing "popular" card — cleaner emphasis via a subtle ring instead of
+   piling more shadow onto it. */
+.pricing-card--popular,
+.pricing-card--featured {
+  box-shadow:
+    0 0 0 1px var(--color-primary, #0075de),
+    0 10px 30px -14px rgba(0, 117, 222, 0.28);
+}
+html[data-theme="dark"] .pricing-card--popular,
+html[data-theme="dark"] .pricing-card--featured {
+  box-shadow:
+    0 0 0 1px #4a9eff,
+    0 10px 30px -14px rgba(74, 158, 255, 0.35);
+}
+
+/* Logo strip — slightly more breathing room, keep grayscale treatment */
+.logo-strip,
+.logos {
+  row-gap: 16px;
+  column-gap: 28px;
+}
+
+/* Secondary/ghost button border in dark mode — was too faint to read as
+   a button boundary against the near-black surface. */
+html[data-theme="dark"] .btn-secondary,
+html[data-theme="dark"] .btn-ghost {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+html[data-theme="dark"] .btn-secondary:hover,
+html[data-theme="dark"] .btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background-color: rgba(255, 255, 255, 0.04);
+}
+
+
+/* ---------------------------------------------------------------
+   Structural minimalist pass — additive polish on top of everything
+   above. Tightens rhythm on landing + dashboard. No HTML/JS changes.
+   --------------------------------------------------------------- */
+
+/* Slightly softer surface tokens for a calmer canvas */
+:root {
+  --radius-card: 14px;
+  --color-border: #ececec;
+}
+html[data-theme="dark"] {
+  --color-border: #23262c;
+}
+
+/* Cards: hairline border, quieter default, cleaner hover */
+.card,
+.feature-card,
+.pricing-card,
+.testimonial-card,
+.dash-card,
+.kpi-card,
+.stat-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  transition: box-shadow 220ms ease, transform 220ms ease,
+              border-color 220ms ease;
+}
+.card:hover,
+.feature-card:hover,
+.pricing-card:hover,
+.testimonial-card:hover,
+.dash-card:hover,
+.kpi-card:hover,
+.stat-card:hover {
+  border-color: color-mix(in oklab, var(--color-primary, #0075de) 22%, var(--color-border));
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 12px 32px -18px rgba(15, 23, 42, 0.18);
+}
+html[data-theme="dark"] .card:hover,
+html[data-theme="dark"] .feature-card:hover,
+html[data-theme="dark"] .pricing-card:hover,
+html[data-theme="dark"] .testimonial-card:hover,
+html[data-theme="dark"] .dash-card:hover,
+html[data-theme="dark"] .kpi-card:hover,
+html[data-theme="dark"] .stat-card:hover {
+  border-color: color-mix(in oklab, #4a9eff 32%, var(--color-border));
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 14px 34px -16px rgba(0, 0, 0, 0.55);
+}
+
+/* ── Features + Free/Team pricing: consistent 1px hairline @ ~15% ──
+   Border stays subtle across default / hover / focus / active states.
+   Focus emphasis is carried by the outline ring, not by thickening the border. */
+#features .feature-card,
+.pricing-card:not(.pricing-card--featured):not(.pricing-card--popular) {
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.15);
+  transition: border-color 180ms ease, box-shadow 220ms ease, transform 220ms ease;
+}
+#features .feature-card:hover,
+.pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):hover {
+  border-color: color-mix(in oklab, var(--color-primary, #0075de) 22%, rgba(0, 0, 0, 0.15));
+}
+#features .feature-card:focus-visible,
+.pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):focus-visible {
+  border-color: color-mix(in oklab, var(--color-primary, #0075de) 22%, rgba(0, 0, 0, 0.15));
+}
+#features .feature-card:active,
+.pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):active {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+html[data-theme="dark"] #features .feature-card,
+html[data-theme="dark"] .pricing-card:not(.pricing-card--featured):not(.pricing-card--popular) {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+html[data-theme="dark"] #features .feature-card:hover,
+html[data-theme="dark"] .pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):hover,
+html[data-theme="dark"] #features .feature-card:focus-visible,
+html[data-theme="dark"] .pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):focus-visible {
+  border-color: color-mix(in oklab, #4a9eff 32%, rgba(255, 255, 255, 0.15));
+}
+html[data-theme="dark"] #features .feature-card:active,
+html[data-theme="dark"] .pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):active {
+  border-color: rgba(255, 255, 255, 0.20);
+}
+
+/* Blue glow behind #features bento cards on hover/focus — additive,
+   preserves the 1px hairline (delivered via border-color rules above). */
+#features .feature-card:hover,
+#features .feature-card:focus-visible,
+.pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):hover,
+.pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):focus-visible {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-primary, #0075de) 20%, transparent),
+    0 12px 28px -10px color-mix(in oklab, var(--color-primary, #0075de) 45%, transparent),
+    0 4px 14px -6px rgba(15, 23, 42, 0.10);
+}
+html[data-theme="dark"] #features .feature-card:hover,
+html[data-theme="dark"] #features .feature-card:focus-visible,
+html[data-theme="dark"] .pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):hover,
+html[data-theme="dark"] .pricing-card:not(.pricing-card--featured):not(.pricing-card--popular):focus-visible {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, #4a9eff 32%, transparent),
+    0 14px 34px -10px color-mix(in oklab, #4a9eff 55%, transparent),
+    0 4px 16px -6px rgba(0, 0, 0, 0.55);
+}
+
+
+
+/* Section heading rhythm — a touch tighter, letter-spacing crisp */
+h1, h2, h3 {
+  letter-spacing: -0.015em;
+}
+h1 { letter-spacing: -0.025em; }
+
+/* Tables: minimal frame, uppercase micro headers */
+table thead th {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted, #6b7280);
+}
+table tbody tr {
+  transition: background-color 140ms ease;
+}
+table tbody tr:hover {
+  background-color: color-mix(in oklab, var(--color-primary, #0075de) 5%, transparent);
+}
+
+/* Primary CTA — refined gradient sheen, keeps AA in both themes */
+.btn-primary {
+  background-image: linear-gradient(180deg,
+    color-mix(in oklab, var(--color-primary, #0075de) 92%, white) 0%,
+    var(--color-primary, #0075de) 100%);
+}
+html[data-theme="dark"] .btn-primary {
+  background-image: linear-gradient(180deg, #6bb1ff 0%, #4a9eff 100%);
+}
+
+/* Dashboard sidebar — hairline right border, quiet hover states */
+.sidebar,
+.dash-sidebar {
+  border-right: 1px solid var(--color-border);
+}
+.sidebar__link:hover,
+.dash-sidebar a:hover {
+  background-color: color-mix(in oklab, var(--color-primary, #0075de) 6%, transparent);
+  border-radius: 8px;
+}
+
+/* Dashboard topbar — hairline bottom, faint blur */
+.topbar,
+.dash-topbar {
+  border-bottom: 1px solid var(--color-border);
+  backdrop-filter: saturate(140%) blur(8px);
+  -webkit-backdrop-filter: saturate(140%) blur(8px);
+}
+
+/* Reduced motion — respect */
+@media (prefers-reduced-motion: reduce) {
+  .card, .feature-card, .pricing-card, .dash-card,
+  .kpi-card, .stat-card, .testimonial-card, table tbody tr {
+    transition: none;
+  }
+  .card:hover, .feature-card:hover, .pricing-card:hover,
+  .dash-card:hover, .kpi-card:hover, .stat-card:hover {
+    transform: none;
+  }
+}
+
+
+/* ---------------------------------------------------------------
+   Hero mockup — macOS window with Name/Status/Timeline table.
+   Scoped to .hero-mockup__card; outer float/animation unchanged.
+   --------------------------------------------------------------- */
+.hero-mockup__card {
+  padding: 0 !important;
+  overflow: hidden;
+  background: #0f1115 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.hero-mockup__titlebar {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #171a20;
+}
+.hero-mockup__traffic { display: inline-flex; gap: 6px; }
+.hero-mockup__traffic--spacer { visibility: hidden; }
+.hero-mockup__tl { width: 11px; height: 11px; border-radius: 50%; display: inline-block; }
+.hero-mockup__tl--red   { background: #ff5f57; }
+.hero-mockup__tl--amber { background: #febc2e; }
+.hero-mockup__tl--green { background: #28c840; }
+.hero-mockup__winlabel {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.72);
+  font-weight: 600;
+  text-align: center;
+}
+
+.hero-mockup__table {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  column-gap: 24px;
+  row-gap: 10px;
+  padding: 18px 22px 22px;
+  align-items: center;
+}
+.hero-mockup__th {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.45);
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 4px;
+}
+.hero-mockup__th--right { text-align: right; }
+.hero-mockup__cell {
+  font-size: 13px;
+  color: rgba(255,255,255,0.92);
+}
+.hero-mockup__cell--name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hero-mockup__date {
+  text-align: right;
+  color: rgba(255,255,255,0.55) !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.hero-mockup__pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border: 1px solid transparent;
+  background: rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.85);
+}
+.hero-mockup__pill--review   { color: #f5c26b; border-color: rgba(245,194,107,0.35); background: rgba(245,194,107,0.08); }
+.hero-mockup__pill--progress { color: #6bb1ff; border-color: rgba(107,177,255,0.35); background: rgba(107,177,255,0.08); }
+.hero-mockup__pill--done     { color: #6de3a3; border-color: rgba(109,227,163,0.35); background: rgba(109,227,163,0.08); }
+.hero-mockup__pill--backlog  { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.04); }
+.hero-mockup__pill--planned  { color: #c9a6ff; border-color: rgba(201,166,255,0.35); background: rgba(201,166,255,0.08); }
+
+/* ============================================================
+   Cross-page animation polish (additive)
+   - Reuse existing keyframes: twinkle, float, gradient-shift
+   - Faint stars behind auth cards, dashboard greeting, contact,
+     404. Auth cards get a slow float. Gradient headline classes
+     get the ambient hue shift.
+   ============================================================ */
+
+/* Ensure host sections are positioning contexts and content sits
+   above the decorative stars layer. */
+.auth-page,
+.dash-hero,
+.contact-section { position: relative; }
+
+.auth-page > *:not(.hero-stars):not(.floating-toggles),
+.dash-hero > *:not(.hero-stars):not(.floating-toggles),
+.contact-section > *:not(.hero-stars):not(.floating-toggles) { position: relative; z-index: 1; }
+
+/* Subtle hairline edge on the auth card */
+.auth-card {
+  border: 1px solid rgba(15, 23, 42, 0.18) !important;
+}
+[data-theme="dark"] .auth-card {
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Soft variant of the star field — full coverage, faint, non-interactive */
+.hero-stars--soft {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  overflow: hidden;
+}
+[data-theme="dark"] .hero-stars--soft { opacity: 0.45; }
+
+/* Slow float for auth cards (calmer than the hero mockup) */
+.auth-card.is-floating {
+  animation: float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Ambient gradient shift on any gradient headline span across pages */
+.hero-band__headline--gradient,
+.text-gradient,
+.gradient-text {
+  animation: gradient-shift 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-card.is-floating,
+  .hero-band__headline--gradient,
+  .text-gradient,
+  .gradient-text,
+  .hero-stars--soft .hero-star { animation: none !important; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Solutions cards — enhanced entrance + hover motion
+   Builds on the existing .reveal scroll-in with a scoped lift,
+   soft primary-tinted glow, and subtle icon pop. Reduced-motion
+   users get the static hover treatment only.
+   ───────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: no-preference) {
+  #solutions .solution-card {
+    transition:
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.35s ease,
+      border-color 0.25s ease;
+    will-change: transform;
+  }
+  #solutions .solution-card:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in oklab, var(--color-primary) 35%, var(--color-border));
+  }
+  #solutions .solution-card:active {
+    transform: translateY(-2px);
+    transition-duration: 0.12s;
+  }
+  #solutions .solution-card .solution-card__icon {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  #solutions .solution-card:hover .solution-card__icon {
+    transform: translateY(-2px) scale(1.06) rotate(-2deg);
+  }
+}
+
+/* Light-mode glow — denser so it reads clearly on pale surfaces */
+#solutions .solution-card:hover,
+#solutions .solution-card:focus-visible {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--color-primary, #0075de) 30%, transparent),
+    0 12px 28px -10px color-mix(in oklab, var(--color-primary, #0075de) 60%, transparent),
+    0 4px 14px -6px rgba(15, 23, 42, 0.15);
+}
+
+html[data-theme="dark"] #solutions .solution-card:hover,
+html[data-theme="dark"] #solutions .solution-card:focus-visible {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, #4a9eff 32%, transparent),
+    0 14px 34px -10px color-mix(in oklab, #4a9eff 55%, transparent),
+    0 4px 16px -6px rgba(0, 0, 0, 0.55);
+}
+
+/* Showcase — reuse hero mac window chrome around dashboard image */
+.showcase__window {
+  width: 100%;
+  transform: none !important;
+  margin: 0 !important;
+}
+.showcase__window .showcase__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0 0 12px 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Keyboard focus — solid, high-contrast outline on top of the glow so
+   tab-navigation is unmistakable and never obscured by the box-shadow. */
+#solutions .solution-card {
+  outline: 0;
+}
+#solutions .solution-card:focus { outline: 0; }
+#solutions .solution-card:focus-visible {
+  outline: 3px solid var(--color-primary, #0075de);
+  outline-offset: 3px;
+  border-color: color-mix(in oklab, var(--color-primary, #0075de) 55%, var(--color-border));
+}
+html[data-theme="dark"] #solutions .solution-card:focus-visible {
+  outline-color: #4a9eff;
+}
